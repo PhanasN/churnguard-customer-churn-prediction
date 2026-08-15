@@ -69,7 +69,7 @@ Model output is converted into risk tiers (Low / Medium / High) to produce a foc
 churnguard-customer-churn-prediction/
 ├── README.md
 ├── Customer_Churn_Final_Report.ipynb
-├── ChurnGuard_Final_Report_Phanas.pdf
+├── ChurnGuard_Final_Report_revised.pdf
 ├── figures/
 │   ├── data_quality/
 │   ├── exploratory_analysis/
