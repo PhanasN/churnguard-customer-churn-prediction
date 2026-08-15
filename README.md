@@ -10,12 +10,12 @@ The project does not start with a model. It starts by understanding where churn 
 
 ## Project structure
 
-This repository is organized as two connected milestones:
+The analysis is organized in two connected stages:
 
-1. **Business insights and diagnosis** - data quality validation, churn distribution analysis, and driver identification.
-2. **Predictive modelling** - model comparison, tuning, validation, and conversion of model output into an operational retention workflow.
+1. **Business insights and diagnosis** – data quality validation, churn distribution analysis, and driver identification.
+2. **Predictive modelling** – model comparison, tuning, validation, and conversion of model output into an operational retention workflow.
 
-## Key findings (Milestone 1)
+## Key findings: diagnosis stage
 
 - 16.8% of accounts had churned; 83.2% were retained.
 - Accounts in their first three months churned at 42.3%, versus approximately 0% beyond 24 months.
@@ -23,12 +23,12 @@ This repository is organized as two connected milestones:
 - The Regular Plus segment had the highest segment-level churn rate at 27.1%.
 - Tenure and complaint history were the strongest individual risk signals identified through correlation analysis.
 
-## Model results (Milestone 2)
+## Model results: prediction stage
 
 Seven classification approaches were compared under consistent conditions using F1 score for the churn class, because with only 16.8% of accounts churning, a model predicting "no churn" for everyone would appear roughly 83% accurate while catching zero real churners.
 
 | Model | Cross-validated F1 (churn class) |
-|---|---:|
+|---|---|
 | XGBoost | 0.88 |
 | Random Forest | 0.86 |
 | KNN | 0.86 |
@@ -39,8 +39,8 @@ Seven classification approaches were compared under consistent conditions using 
 
 The final tuned **XGBoost** model was evaluated on a held-out test set of 2,252 accounts not used in training or tuning:
 
-- **89-90% recall** - correctly identified the large majority of accounts that later churned.
-- **95-97% precision** - the large majority of flagged accounts were genuine churn risks.
+- **89-90% recall** – correctly identified the large majority of accounts that later churned.
+- **95-97% precision** – the large majority of flagged accounts were genuine churn risks.
 - **ROC-AUC of 0.99** for overall risk ranking.
 - Low false-alarm rate among retained accounts.
 
@@ -69,8 +69,7 @@ Model output is converted into risk tiers (Low / Medium / High) to produce a foc
 churnguard-customer-churn-prediction/
 ├── README.md
 ├── Customer_Churn_Final_Report.ipynb
-├── reports/
-│   └── ChurnGuard_Final_Capstone_Report.pdf
+├── ChurnGuard_Final_Report_Phanas.pdf
 ├── figures/
 │   ├── data_quality/
 │   ├── exploratory_analysis/
@@ -99,4 +98,4 @@ Data Quality Management, Exploratory Data Analysis, Feature Engineering, Predict
 
 ## Status
 
-Both milestones are complete: business diagnosis and predictive model validation. The next phase is a live controlled test of the retention intervention against a matched control group.
+Both stages are complete: business diagnosis and predictive model validation. The next phase is a live controlled test of the retention intervention against a matched control group.
